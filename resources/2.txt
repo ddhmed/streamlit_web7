@@ -1,0 +1,19 @@
+<p><strong>姓名：</strong>高文星</p>
+<p><strong>学历：</strong>博士在读（2021级）</p>
+<p><strong>研究领域：</strong>生物信息学</p>
+<p><strong>研究方向：</strong>药物设计 脂肪肝 结直肠癌</p>
+<p><strong>当前单位：</strong>同济大学&nbsp;生物信息系</p>
+<p><br /></p>
+<p><strong>教育背景</strong><br />2019年9月——至今：同济大学&nbsp;生物信息系&nbsp;硕博连读在读<br />2014年9月——2019年6月：南京医科大学&nbsp;基础医学&nbsp;本科<br /></p>
+<p><br /></p>
+<p><strong>同行评议论文（发表SCI论文1篇(其中1为第一/通讯作者)</strong></p>
+<p style="font-family: DengXian; font-size: 14px; white-space: normal;"><span style="background: white; color: rgb(85, 85, 85); font-family: &quot;Helvetica Neue&quot;;">Dingfeng&nbsp;Wu<sup>†</sup>,&nbsp;<strong>Wenxing&nbsp;Gao</strong></span><sup><span style="background: white; color: rgb(85, 85, 85); font-family: &quot;Helvetica Neue&quot;; font-size: 12px;">†</span></sup><span style="background: white; color: rgb(85, 85, 85); font-family: &quot;Helvetica Neue&quot;;">,&nbsp;Xiaoyi&nbsp;Li</span><sup><span style="background: white; color: rgb(85, 85, 85); font-family: &quot;Helvetica Neue&quot;; font-size: 12px;">†</span></sup><span style="background: white; color: rgb(85, 85, 85); font-family: &quot;Helvetica Neue&quot;;">,&nbsp;Chuan&nbsp;Tian, Na Jiao, Sa Fang, Jing Xiao,&nbsp;Zhifeng&nbsp;Xu,&nbsp;Lixin&nbsp;Zhu*,&nbsp;Guoqing&nbsp;Zhang* and<strong>&nbsp;Ruixin&nbsp;Zhu</strong>*. (<strong>2020</strong>).&nbsp;Dr&nbsp;<em>AFC</em>: Drug Repositioning Through Anti-Fibrosis Characteristic.&nbsp;<em>Briefings in Bioinformatics</em>, DOI:&nbsp;</span><a href="https://doi.org/10.1093/bib/bbaa115"><span style="color: rgb(51, 122, 183); font-family: &quot;Helvetica Neue&quot;;">https://doi.org/10.1093/bib/bbaa115</span></a><span style="background: white; color: rgb(85, 85, 85); font-family: &quot;Helvetica Neue&quot;;">.</span></p>
+<p><br /></p>
+<p><strong>获得荣誉</strong></p>
+<p style="background: white; margin: 0px 0px 10px; line-height: 21px; font-family: DengXian; font-size: 14px; white-space: normal;"><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">1. 2020</span><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">年，研究生国家奖学金</span></p>
+<p style="background: white; margin: 0px 0px 10px; line-height: 21px; font-family: DengXian; font-size: 14px; white-space: normal;"><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">2. 2020</span><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">年，同济大学优秀学生</span></p>
+<p style="background: white; margin: 0px 0px 10px; line-height: 21px; font-family: DengXian; font-size: 14px; white-space: normal;"><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">3. 2017</span><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">年，全国大学生英语竞赛特等奖</span></p>
+<p style="background: white; margin: 0px 0px 10px; line-height: 21px; font-family: DengXian; font-size: 14px; white-space: normal;"><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">4. 2016</span><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">年，江苏省大学生成长故事报告会科技先锋</span></p>
+<p style="background: white; margin: 0px 0px 10px; line-height: 21px; font-family: DengXian; font-size: 14px; white-space: normal;"><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">5. 2015</span><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">年，中国大学生计算机设计大赛二等奖</span></p>
+<p style="background: white; margin: 0px 0px 10px; line-height: 21px; font-family: DengXian; font-size: 14px; white-space: normal;"><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">6. 2015</span><span style="color: rgb(51, 51, 51); font-family: 楷体; font-size: 16px;">年，校创新特等奖学金</span></p>
+<p><br /></p>

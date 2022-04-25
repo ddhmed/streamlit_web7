@@ -1,0 +1,139 @@
+<html lang="zh-CN">
+  <head>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    
+  </head>
+  <body>
+    <!-- Set up your HTML here -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" id="nav">
+            <!-- Add pages here ! -->
+          </ul>
+
+
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" id="input">
+            </div>
+            <button type="submit" class="btn btn-default" id="submit">Submit</button>
+          </form>
+          
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <script>
+      // ----------------------------------------------------
+      // Just copy/paste these functions as-is:
+      function sendMessageToStreamlitClient(type, data) {
+        var outData = Object.assign({
+          isStreamlitMessage: true,
+          type: type,
+        }, data);
+        window.parent.postMessage(outData, "*");
+      }
+      function init() {
+        sendMessageToStreamlitClient("streamlit:componentReady", {apiVersion: 1});
+      }
+      function setFrameHeight(height) {
+        sendMessageToStreamlitClient("streamlit:setFrameHeight", {height: height});
+      }
+      // The `data` argument can be any JSON-serializable value.
+      function sendDataToPython(data) {
+        sendMessageToStreamlitClient("streamlit:setComponentValue", data);
+      }
+      // ----------------------------------------------------
+      // Now modify this part of the code to fit your needs:
+      var nav = document.getElementById("nav");
+      var click_time = 0; //初始点击次数
+      var search_time = 0; //搜索次数
+      var isfirstload = 0;
+      // data is any JSON-serializable value you sent from Python,
+      // and it's already deserialized for you.
+      function onDataFromPython(event) {
+        if (event.data.type !== "streamlit:render") return;
+        items = event.data.args.items;  // Access values sent from Python here!
+        click_time = event.data.args.times[0];
+        search_time = event.data.args.times[1];
+        //alert(items.length);
+        if(isfirstload==0){ //第一次加载才添加组建
+          for(var i=0;i<items.length;i++){
+            //alert(items[i]);
+            var obj = document.createElement("li"); //创建一个li元素 // <li><a href="#">Action</a></li>
+            var a = document.createElement("a"); //创建一个a元素
+            a.value = items[i][0]; //设置a的值
+            a.innerText = items[i][1];
+            a.href = '#';
+            obj.appendChild(a);
+            nav.appendChild(obj);
+            //给a绑定click事件 (闭包模式) // https://blog.csdn.net/weixin_43863327/article/details/89675626
+            a.addEventListener("click", (function(param){
+                var childrenparam=param;
+                return function(){
+                  click_time ++; // 点击次数增加1 ！！！重要！！！
+                  //alert(click_time);
+                  sendDataToPython({
+                    value: [click_time, search_time, childrenparam, ''],
+                    dataType: "json",
+                  });
+                }
+              })(a.value)
+            )// end of a.addEventListener
+          }
+          isfirstload = 1;
+        } // end of if(isfirstload==0){
+      } // end of function onDataFromPython(event) 
+      
+      var input = document.getElementById("input");
+        input.addEventListener("change", function() {
+          search_time ++;
+          sendDataToPython({
+            value: [click_time, search_time, '0', input.value],
+            dataType: "json",
+        });
+      })
+
+      var submit = document.getElementById("submit");
+        submit.addEventListener("click", function() {
+          search_time ++;
+          sendDataToPython({
+            value: [click_time, search_time, '0', input.value],
+            dataType: "json",
+        });
+      })
+      
+      // Hook things up!
+      window.addEventListener("message", onDataFromPython);
+      init();
+      // Hack to autoset the iframe height.
+      window.addEventListener("load", function() {
+        window.setTimeout(function() {
+          setFrameHeight(document.documentElement.clientHeight)
+        }, 0);
+      });
+      // Optionally, if the automatic height computation fails you, give this component a height manually
+      // by commenting out below:
+      //setFrameHeight(200);
+    </script>
+  </body>
+</html>
