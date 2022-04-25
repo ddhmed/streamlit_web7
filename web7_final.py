@@ -115,21 +115,21 @@ def page_2():
         <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
         <div class="row">
             <div class="col-sm-6 col-md-4"><div class="thumbnail">
-                <a href="?page_id=3&select=1&afrom=1" target="_parent"><img src="data:image/png;base64, {get_base64_of_bin_file('./streamlit/resources/1.png')}" width="500px" /></a>
+                <a href="?page_id=3&select=1&afrom=1" target="_parent"><img src="data:image/png;base64, {get_base64_of_bin_file('./resources/1.png')}" width="500px" /></a>
                 <div class="caption">
                     <h3><span style="display:none;">1. </span><span>高升</span></h3>
                     <p>xxx</p>
                 </div>
             </div></div>
             <div class="col-sm-6 col-md-4"><div class="thumbnail">
-                <a href="?page_id=3&select=2&afrom=1" target="_parent"><img src="data:image/png;base64, {get_base64_of_bin_file('./streamlit/resources/2.png')}" width="500px" /></a>
+                <a href="?page_id=3&select=2&afrom=1" target="_parent"><img src="data:image/png;base64, {get_base64_of_bin_file('./resources/2.png')}" width="500px" /></a>
                 <div class="caption">
                     <h3><span style="display:none;">1. </span><span>高文星</span></h3>
                     <p>xxxx</p>
                 </div>
             </div></div>
             <div class="col-sm-6 col-md-4"><div class="thumbnail">
-                <a href="?page_id=3&select=3&afrom=1" target="_parent"><img src="data:image/png;base64, {get_base64_of_bin_file('./streamlit/resources/3.png')}" width="500px" /></a>
+                <a href="?page_id=3&select=3&afrom=1" target="_parent"><img src="data:image/png;base64, {get_base64_of_bin_file('./resources/3.png')}" width="500px" /></a>
                 <div class="caption">
                     <h3><span style="display:none;">1. </span><span>陶丽雯</span></h3>
                     <p>xxx</p>
@@ -174,9 +174,9 @@ def page_info():
         index = str(st.session_state['select']).strip()
         from PIL import Image
         if index not in ['1', '2', '3']: index = '1'
-        image = Image.open('./streamlit/resources/'+index+'.png')
+        image = Image.open('./resources/'+index+'.png')
         st.image(image, caption='', width=300)
-        html = ''.join(open('./streamlit/resources/'+index+'.txt', 'r').readlines())
+        html = ''.join(open('./resources/'+index+'.txt', 'r').readlines())
         st.write(html, unsafe_allow_html=True)
         
 
